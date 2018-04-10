@@ -10,12 +10,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Is it a good day for Disc golf?</h1>
+        <div className="dg-weather">
+        </div>
       </div>
     );
   }
 }
 
-// weather?zip=94040,us
 
 axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=08083,us&APPID=${API_KEY}`)
 .then(function (response) {
