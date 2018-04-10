@@ -5,6 +5,9 @@
   color: white;
 }
 .dg-weather {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto 100px;
   margin: 0 auto;
   text-align: center;
   background-color: #0090C1;
@@ -12,4 +15,15 @@
   height: 80vh;
   border-radius: 2%;
 }
-
+.zip__wrapper {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.zip__button {
+  color: green;
+}
+.zip__input {
+  color: red;
+}
