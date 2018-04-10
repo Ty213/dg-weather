@@ -9,7 +9,7 @@ class Zip extends Component {
       }
 
       componentDidMount() {
-        this.nameInput.focus(); 
+        this.zipInput.focus(); 
       }
     
       handleChange(event) {
@@ -17,7 +17,8 @@ class Zip extends Component {
       }
     
       handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        console.log(this.state.value);
+        this.props.getWeather(this.state.value);
         event.preventDefault();
       }
 
@@ -27,7 +28,7 @@ class Zip extends Component {
         <form onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.value} placeholder="Enter your Zip code"
              className="zip__input" 
-             ref={(input) => { this.nameInput = input; }}
+             ref={(input) => { this.zipInput = input; }}
              onChange={this.handleChange} />
             <input className="zip__button" type="submit" value="Submit" />
         </form>
