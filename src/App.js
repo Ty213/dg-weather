@@ -9,21 +9,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.getWeather = this.getWeather.bind(this);
+    this.setWeather = this.setWeather.bind(this);
     this.state = {
-
+      weather: null
     }
   }
 
+  setWeather(weather) {
+    this.setState({weather})
+    console.log(this.state.weather);
+  }
   getWeather(zip) {
     console.log("This is coming from app component", zip);
     axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=${API_KEY}`)
-      .then(function (response) {
-          console.log(response);
-        })
+      .then((response) => this.setWeather(response.data))
       .catch(function (error) {
           console.log(error);
       });
   }
+
+
 
   
   render() {
